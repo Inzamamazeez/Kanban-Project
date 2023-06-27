@@ -23,18 +23,15 @@ export function DescriptionPg() {
 
     const tasks = listItem.map((item) => item.children);
     console.log(tasks);
-    let taskUpdate;
+    let taskUpdate ={};
+
     for (let i = 0; i < listItem.length; i++) {
-        let temptask;
-        temptask = tasks[i].find((task) => {
-            // console.log(task.id,id);
-            return task.id === Number(id)
-        });
-        if (temptask !== undefined) {
-            taskUpdate = temptask;
-            break;
+        let temptask = tasks[i].find((task) => task.id === Number(id));
+        if (temptask) {
+          taskUpdate = temptask;
+          break;
         }
-    }
+      }
 
     console.log(taskUpdate)
 
